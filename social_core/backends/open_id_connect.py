@@ -146,15 +146,15 @@ class OpenIdConnectAuth(BaseOAuth2):
             raise AuthTokenError(self, 'Incorrect id_token: iat')
 
         # Validate the nonce to ensure the request was not modified
-        nonce = id_token.get('nonce')
-        if not nonce:
-            raise AuthTokenError(self, 'Incorrect id_token: nonce')
+        # nonce = id_token.get('nonce')
+        # if not nonce:
+        #     raise AuthTokenError(self, 'Incorrect id_token: nonce')
 
-        nonce_obj = self.get_nonce(nonce)
-        if nonce_obj:
-            self.remove_nonce(nonce_obj.id)
-        else:
-            raise AuthTokenError(self, 'Incorrect id_token: nonce')
+        # nonce_obj = self.get_nonce(nonce)
+        # if nonce_obj:
+        #     self.remove_nonce(nonce_obj.id)
+        # else:
+        #     raise AuthTokenError(self, 'Incorrect id_token: nonce')
 
     def validate_and_return_id_token(self, jws):
         """
