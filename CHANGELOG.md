@@ -6,8 +6,43 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/python-social-auth/social-core/commits/master)
+
+### Changed
+- GitHub backend now uses `state` parameter instead of `redirect_state`
+- Correct setting name on AzureAD Tenant backend
+- Introduce access token expired threshold of 5 seconds by default
+- Delete partial token from session if still present
+- Use `userPrincipalName` to set `username` and `email` accordingly
+- Send authorization headers to Kakao OAuth2, properly fill user details
+
+## [1.7.0](https://github.com/python-social-auth/social-core/releases/tag/1.7.0) - 2018-02-20
+
+### Changed
+- Update EvenOnline token expiration key
+- Update OpenStreetMap URL to `https`
+- Fix LinkedIn backend to send the oauth_token as `Authorization` header
+- Fixed `extra_data` update to use the `alias` as key too
+- Make `signed_request` optional in Facebook App OAuth2 backend
+- Support string and lists on SAML permanent id value
+- Correct sending `params` sending on `GET` access-token retrieval case
+- Ensure b2c policy name check
+- Use `extras_requrie` to specify python specific version dependencies
+
+### Added
+- Added support for AzureAD B2C OAuth2
+- Added LinkedIn Mobile OAuth2 backend
+
+## [1.6.0](https://github.com/python-social-auth/social-core/releases/tag/1.6.0) - 2017-12-22
+
 ### Changed
 - Fix coinbase backend to use api v2
+- Default `REDIRECT_STATE` to `False` in `FacebookOAuth2` backend.
+- Add revoke token url for Coinbase OAuth2 backend
+- Fix LinkedIn backend to send `oauth_token` as request header
+- Make partial step decorator handle arguments
+
+### Added
+- Added support for ChatWork OAuth2 backend
 
 ## [1.5.0](https://github.com/python-social-auth/social-core/releases/tag/1.5.0) - 2017-10-28
 
